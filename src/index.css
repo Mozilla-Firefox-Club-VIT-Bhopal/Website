@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0b0a12;
+  --color-paper: #ecebf2;
+  --color-soft: #b7b4c9;
+  --color-muted: #8b88a0;
+  --color-line: #2a2838;
+  --color-violet: #b98cff;
+  --color-lilac: #c9a6ff;
+  --font-sans: "Archivo", system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --ease-out-soft: cubic-bezier(.2, .8, .2, 1);
+  --ease-in-out-strong: cubic-bezier(.77, 0, .18, 1);
+}
+
+@layer base {
+  html, body { background: var(--color-ink); color: var(--color-paper); overscroll-behavior: none; }
+  /* Hide the native scrollbar everywhere — scrolling still works (wheel, touch, keyboard). */
+  html, body { scrollbar-width: none; -ms-overflow-style: none; }
+  html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; height: 0; }
+  body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--color-violet); color: var(--color-ink); }
+}
+
+body.cc-cursor, body.cc-cursor * { cursor: none !important; }
