@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Type-check, build & dev smoke test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then npm ci; else npm install; fi
+
+      - name: Type-check
+        run: npm run typecheck
+
+      - name: Production build
+        run: npm run build
+
+      - name: Dev server smoke test
+        run: |
+          npm run dev -- --port 5173 --strictPort > dev.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -sf http://localhost:5173 > /dev/null && curl -sf http://localhost:5173/src/main.tsx > /dev/null; then
+              echo "Dev server is up"; kill %1; exit 0
+            fi
+            sleep 1
+          done
+          echo "Dev server failed to start"; cat dev.log; exit 1
+
+      - name: Preview server smoke test
+        run: |
+          npm run preview -- --port 4173 --strictPort > preview.log 2>&1 &
+          for i in $(seq 1 20); do
+            if curl -sf http://localhost:4173 | grep -q '<div id="root">'; then
+              echo "Preview OK"; kill %1; exit 0
+            fi
+            sleep 1
+          done
+          echo "Preview failed"; cat preview.log; exit 1
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          retention-days: 7
