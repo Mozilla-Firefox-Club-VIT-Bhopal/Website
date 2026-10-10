@@ -17,7 +17,7 @@ export default function Footer() {
         <img ref={logo} src="/nightly-logo.webp" alt="Firefox Nightly" className="h-auto w-[min(56vh,62vw)] will-change-transform drop-shadow-[0_40px_80px_rgba(130,90,255,.35)]" />
       </div>
       <div className="flex w-full justify-between gap-5 pt-[6vh] font-mono text-xs tracking-[.06em] text-muted">
-        <span>© 2026 MOZILLA FIREFOX CLUB, VIT BHOPAL</span>
+        <span>© {new Date().getFullYear()} MOZILLA FIREFOX CLUB, VIT BHOPAL</span>
         <a href="#top" className="hover:text-lilac">BACK TO TOP ↑</a>
       </div>
     </footer>
