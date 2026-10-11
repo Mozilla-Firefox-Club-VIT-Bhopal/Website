@@ -1,5 +1,5 @@
 export interface IntroFrame { word: string; cap: string; bg: string }
-export interface ClubEvent { n: string; title: string; kind: string; date: string; d: string; hue: number }
+export interface ClubEvent { n: string; title: string; kind: string; date: string; hue: number }
 export interface Person { name: string; role: string; teamName?: string; members?: string[] }
 export interface Social { label: string; handle: string; href: string }
 export interface ContactInfo { email: string; socials: Social[]; address: string[] }
@@ -22,11 +22,11 @@ export const heroCopy: string = 'The official Mozilla campus club at VIT Bhopal.
 export const manifesto: string = "We're a room full of curious people — coders, designers, writers and storytellers. We share what we know, build things that matter, and make sure nobody on campus has to learn alone.";
 
 export const events: ClubEvent[] = [
-  { n: '01', title: 'Hack the Web 2026', kind: 'HACKATHON', date: '25.10', d: '25', hue: 290 },
-  { n: '02', title: 'DevTools, deep dive', kind: 'WORKSHOP', date: '16.10', d: '16', hue: 255 },
-  { n: '03', title: 'Firefox in Hindi', kind: 'L10N SPRINT', date: '05.11', d: '05', hue: 330 },
-  { n: '04', title: 'Privacy by design', kind: 'TALK', date: '13.11', d: '13', hue: 220 },
-  { n: '05', title: 'Your first patch', kind: 'MENTORING', date: '20.11', d: '20', hue: 310 },
+  { n: '01', title: 'Hack the Web 2026', kind: 'HACKATHON', date: '2026-10-25', hue: 290 },
+  { n: '02', title: 'DevTools, deep dive', kind: 'WORKSHOP', date: '2026-10-16', hue: 255 },
+  { n: '03', title: 'Firefox in Hindi', kind: 'L10N SPRINT', date: '2026-11-05', hue: 330 },
+  { n: '04', title: 'Privacy by design', kind: 'TALK', date: '2026-11-13', hue: 220 },
+  { n: '05', title: 'Your first patch', kind: 'MENTORING', date: '2026-11-20', hue: 310 },
 ];
 
 export const marqueeWords: string[] = ['Learn', 'Build', 'Ship', 'Hack', 'Translate', 'Test', 'Belong'];
