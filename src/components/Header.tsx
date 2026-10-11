@@ -36,7 +36,7 @@ export default function Header() {
         className="flex shrink-0 items-center gap-2.5"
         onClick={() => setIsOpen(false)}
       >
-        <img src="/nightly-logo.webp" alt="" className="h-[26px] w-[26px]" />
+        <img src="/nightly-logo.svg" alt="" className="h-[26px] w-[26px]" />
         FIREFOX CLUB
       </a>
 

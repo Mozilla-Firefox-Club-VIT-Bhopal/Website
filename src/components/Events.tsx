@@ -58,7 +58,7 @@ export default function Events() {
         <div ref={card} className="pointer-events-none fixed left-0 top-0 z-40 -ml-[150px] -mt-[190px] h-[380px] w-[300px] overflow-hidden rounded-md"
           style={{ opacity: active >= 0 ? 1 : 0, transition: 'opacity .35s, transform .5s var(--ease-out-soft)' }}>
           <div className="absolute inset-0" style={{ background: `radial-gradient(120% 90% at 30% 20%,oklch(0.62 0.2 ${ev.hue}),oklch(0.28 0.12 ${ev.hue - 20}))` }} />
-          <img src="/nightly-logo.webp" alt="" className="absolute -bottom-[60px] -right-[60px] w-[260px] opacity-35 mix-blend-screen" />
+          <img src="/nightly-logo.svg" alt="" className="absolute -bottom-[60px] -right-[60px] w-[260px] opacity-35 mix-blend-screen" />
           <div className="absolute left-5 top-4 text-8xl font-extrabold leading-none tracking-[-.05em] text-white [font-stretch:120%]">{ev.d}</div>
           <div className="absolute bottom-[18px] left-[22px] font-mono text-xs font-medium tracking-[.1em] text-white">{ev.kind}</div>
         </div>,

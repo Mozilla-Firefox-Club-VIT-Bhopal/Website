@@ -69,7 +69,7 @@ export default function Loader({ onReveal }: LoaderProps) {
           </div>
         ))}
         <div ref={finalRef} className="absolute inset-0 opacity-0 transition-opacity duration-500 bg-[radial-gradient(60%_60%_at_50%_50%,#121a33,#05060d_70%)]">
-          <img ref={logo} src="/nightly-logo.webp" alt="" className="absolute left-1/2 top-1/2 w-[min(30vh,28vw)] opacity-0 drop-shadow-[0_0_60px_rgba(90,140,255,.35)]" style={{ transform: 'translate(-50%,-50%) scale(.82)', transition: 'transform 1.4s cubic-bezier(.22,1,.36,1), opacity .8s' }} />
+          <img ref={logo} src="/nightly-logo.svg" alt="" className="absolute left-1/2 top-1/2 w-[min(30vh,28vw)] opacity-0 drop-shadow-[0_0_60px_rgba(90,140,255,.35)]" style={{ transform: 'translate(-50%,-50%) scale(.82)', transition: 'transform 1.4s cubic-bezier(.22,1,.36,1), opacity .8s' }} />
           <div className="absolute inset-x-0 top-[calc(50%+min(15vh,14vw)+5vh)] flex flex-col items-center gap-3.5">
             <div className="overflow-hidden pb-[.1em]">
               <div ref={(el) => { name.current[0] = el; }} className="whitespace-nowrap font-serif text-[clamp(34px,4.2vw,72px)] leading-none tracking-[-.015em] text-[#ecf0ff]" style={{ transform: 'translateY(110%)', transition: `transform 1.1s ${EZ}` }}>

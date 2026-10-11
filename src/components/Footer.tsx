@@ -14,7 +14,7 @@ export default function Footer() {
   return (
     <footer ref={foot} className="relative flex min-h-screen flex-col items-center justify-between overflow-hidden px-[4vw] pb-[4vh] pt-[14vh] bg-[radial-gradient(60%_50%_at_50%_55%,oklch(0.3_0.12_290/.55),transparent_70%)]">
       <div className="relative flex flex-1 items-center justify-center [perspective:900px]">
-        <img ref={logo} src="/nightly-logo.webp" alt="Firefox Nightly" className="h-auto w-[min(56vh,62vw)] will-change-transform drop-shadow-[0_40px_80px_rgba(130,90,255,.35)]" />
+        <img ref={logo} src="/nightly-logo.svg" alt="Firefox Nightly" className="h-auto w-[min(56vh,62vw)] will-change-transform drop-shadow-[0_40px_80px_rgba(130,90,255,.35)]" />
       </div>
       <div className="flex w-full justify-between gap-5 pt-[6vh] font-mono text-xs tracking-[.06em] text-muted">
         <span>© 2026 MOZILLA FIREFOX CLUB, VIT BHOPAL</span>
