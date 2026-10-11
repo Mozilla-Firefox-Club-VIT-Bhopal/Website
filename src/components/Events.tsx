@@ -38,7 +38,9 @@ export default function Events() {
       </div>
       <div className="border-t border-line" onPointerLeave={() => setActive(-1)}>
         {events.map((e, i) => (
-          <a key={e.n} href="#contact" onPointerEnter={() => !env.touch && setActive(i)}
+          <a key={e.n} href={e.link ?? '#contact'}
+            {...(e.link ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            onPointerEnter={() => !env.touch && setActive(i)}
             className="grid grid-cols-[32px_minmax(0,1fr)_auto] items-center gap-6 border-b border-line py-[3.2vh] md:grid-cols-[70px_minmax(0,1fr)_200px_120px]">
             <span className="font-mono text-xs text-muted">{e.n}</span>
             <span className="text-[clamp(26px,3.6vw,58px)] font-bold leading-none tracking-[-.035em] [font-stretch:112%]"
@@ -48,7 +50,10 @@ export default function Events() {
                 transition: 'transform .6s var(--ease-out-soft), color .3s',
               }}>{e.title}</span>
             <span className="hidden font-mono text-xs tracking-[.08em] text-muted md:block">{e.kind}</span>
-            <span className="text-right font-mono text-sm font-medium">{e.date}</span>
+            <span className="text-right font-mono text-sm font-medium">
+              {e.date}
+              {e.link && <span className="block text-s tracking-[.08em] underline underline-offset-4 uppercase text-lilac">Register</span>}
+            </span>
           </a>
         ))}
       </div>

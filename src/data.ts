@@ -1,5 +1,5 @@
 export interface IntroFrame { word: string; cap: string; bg: string }
-export interface ClubEvent { n: string; title: string; kind: string; date: string; d: string; hue: number }
+export interface ClubEvent { n: string; title: string; kind: string; date: string; d: string; hue: number; link?: string }
 export interface Person { name: string; role: string; teamName?: string; members?: string[] }
 export interface Social { label: string; handle: string; href: string }
 export interface ContactInfo { email: string; socials: Social[]; address: string[] }
@@ -21,6 +21,8 @@ export const heroCopy: string = 'The official Mozilla campus club at VIT Bhopal.
 
 export const manifesto: string = "We're a room full of curious people — coders, designers, writers and storytellers. We share what we know, build things that matter, and make sure nobody on campus has to learn alone.";
 
+// add a link:"https://whatever" link in the event, and it will lead to that page
+// not having the link just scrolls down to the contacts
 export const events: ClubEvent[] = [
   { n: '01', title: 'Hack the Web 2026', kind: 'HACKATHON', date: '25.10', d: '25', hue: 290 },
   { n: '02', title: 'DevTools, deep dive', kind: 'WORKSHOP', date: '16.10', d: '16', hue: 255 },
