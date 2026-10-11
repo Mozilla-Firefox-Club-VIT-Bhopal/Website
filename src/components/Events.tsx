@@ -87,6 +87,7 @@ export default function Events() {
         <span className="hidden md:inline">HOVER TO PREVIEW</span>
       </div>
 
+
       <div
         className="border-t border-line"
         onPointerLeave={() => setActive(-1)}
@@ -155,15 +156,13 @@ export default function Events() {
             />
 
             <img
-              src="/nightly-logo.webp"
+              src="/nightly-logo.svg"
               alt=""
               className="absolute -bottom-[60px] -right-[60px] w-[260px] opacity-35 mix-blend-screen"
             />
 
             <div className="absolute left-5 top-4 text-8xl font-extrabold leading-none tracking-[-.05em] text-white [font-stretch:120%]">
-              {String(
-                new Date(`${ev.date}T00:00:00`).getDate(),
-              ).padStart(2, '0')}
+              {String(new Date(`${ev.date}T00:00:00`).getDate()).padStart(2, '0')}
             </div>
 
             <div className="absolute bottom-[18px] left-[22px] font-mono text-xs font-medium tracking-[.1em] text-white">
@@ -172,6 +171,7 @@ export default function Events() {
           </div>,
           document.body,
         )}
+
     </section>
   );
 }
