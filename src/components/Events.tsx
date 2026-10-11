@@ -18,6 +18,19 @@ export default function Events() {
     el.style.transform = on ? `scale(1) rotate(${Math.max(-14, Math.min(14, dx * 0.08))}deg)` : 'scale(.6)';
   }, [active]);
 
+  if (events.length === 0) {
+    return (
+      <section id="events" className="px-[4vw] pb-[14vh] pt-[10vh]">
+        <div className="mb-[4vh] font-mono text-xs tracking-[.08em] text-muted">
+          <span>(02) — EVENTS</span>
+        </div>
+        <p className="border-t border-line py-[6vh] text-lg text-muted">
+          No upcoming events. Follow us for more updates.
+        </p>
+      </section>
+    )
+  }
+
   return (
     <section id="events" className="px-[4vw] pb-[14vh] pt-[10vh]">
       <div className="mb-[4vh] flex items-baseline justify-between font-mono text-xs tracking-[.08em] text-muted">
@@ -41,15 +54,15 @@ export default function Events() {
       </div>
 
       {/* Portal to <body>: the smooth-scroll wrapper is transformed, which would trap position:fixed inside it. */}
-      {!env.touch && createPortal(
-      <div ref={card} className="pointer-events-none fixed left-0 top-0 z-40 -ml-[150px] -mt-[190px] h-[380px] w-[300px] overflow-hidden rounded-md"
-        style={{ opacity: active >= 0 ? 1 : 0, transition: 'opacity .35s, transform .5s var(--ease-out-soft)' }}>
-        <div className="absolute inset-0" style={{ background: `radial-gradient(120% 90% at 30% 20%,oklch(0.62 0.2 ${ev.hue}),oklch(0.28 0.12 ${ev.hue - 20}))` }} />
-        <img src="/nightly-logo.webp" alt="" className="absolute -bottom-[60px] -right-[60px] w-[260px] opacity-35 mix-blend-screen" />
-        <div className="absolute left-5 top-4 text-8xl font-extrabold leading-none tracking-[-.05em] text-white [font-stretch:120%]">{ev.d}</div>
-        <div className="absolute bottom-[18px] left-[22px] font-mono text-xs font-medium tracking-[.1em] text-white">{ev.kind}</div>
-      </div>,
-      document.body,
+      {ev && !env.touch && createPortal(
+        <div ref={card} className="pointer-events-none fixed left-0 top-0 z-40 -ml-[150px] -mt-[190px] h-[380px] w-[300px] overflow-hidden rounded-md"
+          style={{ opacity: active >= 0 ? 1 : 0, transition: 'opacity .35s, transform .5s var(--ease-out-soft)' }}>
+          <div className="absolute inset-0" style={{ background: `radial-gradient(120% 90% at 30% 20%,oklch(0.62 0.2 ${ev.hue}),oklch(0.28 0.12 ${ev.hue - 20}))` }} />
+          <img src="/nightly-logo.webp" alt="" className="absolute -bottom-[60px] -right-[60px] w-[260px] opacity-35 mix-blend-screen" />
+          <div className="absolute left-5 top-4 text-8xl font-extrabold leading-none tracking-[-.05em] text-white [font-stretch:120%]">{ev.d}</div>
+          <div className="absolute bottom-[18px] left-[22px] font-mono text-xs font-medium tracking-[.1em] text-white">{ev.kind}</div>
+        </div>,
+        document.body,
       )}
     </section>
   );
