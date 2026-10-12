@@ -86,25 +86,14 @@ export default function Events() {
         <span>(02) — EVENTS / {seasonLabel}</span>
         <span className="hidden md:inline">HOVER TO PREVIEW</span>
       </div>
-
-
-      <div
-        className="border-t border-line"
-        onPointerLeave={() => setActive(-1)}
-      >
+      <div className="border-t border-line" onPointerLeave={() => setActive(-1)}>
         {upcomingEvents.map((e, i) => (
-          <a
-            key={e.n}
-            href="#contact"
+          <a key={e.n} href={e.link ?? '#contact'}
+            {...(e.link ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             onPointerEnter={() => !env.touch && setActive(i)}
-            className="grid grid-cols-[32px_minmax(0,1fr)_auto] items-center gap-6 border-b border-line py-[3.2vh] md:grid-cols-[70px_minmax(0,1fr)_200px_120px]"
-          >
-            <span className="font-mono text-xs text-muted">
-              {String(i + 1).padStart(2, '0')}
-            </span>
-
-            <span
-              className="text-[clamp(26px,3.6vw,58px)] font-bold leading-none tracking-[-.035em] [font-stretch:112%]"
+            className="grid grid-cols-[32px_minmax(0,1fr)_auto] items-center gap-6 border-b border-line py-[3.2vh] md:grid-cols-[70px_minmax(0,1fr)_200px_120px]">
+            <span className="font-mono text-xs text-muted">{String(i + 1).padStart(2, '0')}</span>
+            <span className="text-[clamp(26px,3.6vw,58px)] font-bold leading-none tracking-[-.035em] [font-stretch:112%]"
               style={{
                 transform: active === i ? 'translateX(2vw)' : 'none',
                 color:
@@ -114,17 +103,11 @@ export default function Events() {
                       ? 'var(--color-lilac)'
                       : '#5d5a70',
                 transition: 'transform .6s var(--ease-out-soft), color .3s',
-              }}
-            >
-              {e.title}
-            </span>
-
-            <span className="hidden font-mono text-xs tracking-[.08em] text-muted md:block">
-              {e.kind}
-            </span>
-
+              }}>{e.title}</span>
+            <span className="hidden font-mono text-xs tracking-[.08em] text-muted md:block">{e.kind}</span>
             <span className="text-right font-mono text-sm font-medium">
               {formatEventDate(e.date)}
+              {e.link && <span className="block text-s tracking-[.08em] underline underline-offset-4 uppercase text-lilac">Register</span>}
             </span>
           </a>
         ))}
