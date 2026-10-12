@@ -49,9 +49,9 @@ export const team: Person[] = [
 export const contact: ContactInfo = {
   email: 'mozilla.firefox@vitbhopal.ac.in',
   socials: [
-    { label: 'Instagram', handle: '@firefoxclub.vitb', href: '#' },
-    { label: 'LinkedIn', handle: 'Firefox Club VITB', href: '#' },
-    { label: 'GitHub', handle: 'firefoxclub-vitb', href: '#' },
+    { label: 'Instagram', handle: '@firefoxclub.vitb', href: 'https://www.instagram.com/mozillafirefox.vitbhopal/' },
+    { label: 'LinkedIn', handle: 'Firefox Club VITB', href: 'https://www.linkedin.com/company/mozilla-firefox-club-vit-bhopal/' },
+    { label: 'GitHub', handle: 'firefoxclub-vitb', href: 'https://github.com/Mozilla-Firefox-Club-VIT-Bhopal' },
   ],
   address: ['VIT Bhopal University', 'Kothrikalan, Sehore', 'Madhya Pradesh 466114'],
 };
