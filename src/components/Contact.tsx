@@ -5,7 +5,7 @@ const label = 'font-mono text-xs tracking-[.08em] text-muted pb-2.5 border-b bor
 export default function Contact() {
   return (
     <section id="contact" className="border-t border-line px-[4vw] pb-[16vh] pt-[20vh]">
-      <div className="mb-[5vh] font-mono text-xs tracking-[.08em] text-muted">(04) — CONTACT</div>
+      <div className="mb-[5vh] font-mono text-xs tracking-[.08em] text-muted">(05) — CONTACT</div>
       <h2 className="mb-[4vh] text-[clamp(48px,9vw,150px)] font-black uppercase leading-[.9] tracking-[-.055em] [font-stretch:125%]">
         Say <span className="font-serif font-normal normal-case italic tracking-[-.01em] text-lilac">hello.</span>
       </h2>

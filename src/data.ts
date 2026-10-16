@@ -3,6 +3,8 @@ export interface ClubEvent { n: string; title: string; kind: string; date: strin
 export interface Person { name: string; role: string; teamName?: string; members?: string[] }
 export interface Social { label: string; handle: string; href: string }
 export interface ContactInfo { email: string; socials: Social[]; address: string[] }
+export interface GalleryPhoto { src: string; alt: string }
+export interface GalleryEvent { event: string; date: string; photos: GalleryPhoto[] }
 
 export const introFrames: IntroFrame[] = ([
   ['Code', '01 — PATCHES TO FIREFOX', 250],
@@ -27,6 +29,23 @@ export const events: ClubEvent[] = [
   { n: '03', title: 'Firefox in Hindi', kind: 'L10N SPRINT', date: '2026-11-05', hue: 330 },
   { n: '04', title: 'Privacy by design', kind: 'TALK', date: '2026-11-13', hue: 220 },
   { n: '05', title: 'Your first patch', kind: 'MENTORING', date: '2026-11-20', hue: 310 },
+];
+
+// Add Images Here In This Example Format To Show Images
+export const gallery: GalleryEvent[] = [
+  // {
+  //   event: 'Hackathon', date: '2025',
+  //   photos: [
+  //     { src: '/gallery/img1.png', alt: 'test1' },
+  //     { src: '/gallery/img2.png', alt: 'test2' },
+  //   ],
+  // },
+  // {
+  //   event: 'Workshop', date: '2025',
+  //   photos: [
+  //     { src: '/gallery/img3.png', alt: 'test3' },
+  //   ],
+  // },
 ];
 
 export const marqueeWords: string[] = ['Learn', 'Build', 'Ship', 'Hack', 'Translate', 'Test', 'Belong'];

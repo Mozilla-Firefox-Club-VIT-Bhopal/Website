@@ -10,6 +10,7 @@ import Marquee from './components/Marquee.tsx';
 import Team from './components/Team.tsx';
 import Contact from './components/Contact.tsx';
 import Footer from './components/Footer.tsx';
+import Gallery from './components/Gallery.tsx';
 
 const FLAGS = { intro: true, smoothScroll: true, cursor: true };
 
@@ -32,6 +33,7 @@ export default function App() {
           <Events />
           <Marquee />
           <Team />
+          <Gallery />
           <Contact />
           <Footer />
         </div>
