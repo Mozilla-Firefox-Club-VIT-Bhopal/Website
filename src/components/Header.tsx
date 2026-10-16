@@ -5,6 +5,7 @@ const links: [string, string][] = [
   ['about', 'ABOUT'],
   ['events', 'EVENTS'],
   ['team', 'TEAM'],
+  ['gallery', 'GALLERY'],
   ['contact', 'CONTACT'],
 ];
 
